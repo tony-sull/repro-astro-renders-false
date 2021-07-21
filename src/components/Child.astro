@@ -1,7 +1,10 @@
 ---
 const { items, emptyItems } = Astro.props;
+
+const internal = [];
 ---
 
+<!-- Should render 3 items -->
 {items.length > 0 && (
     <>
         <ul>
@@ -12,10 +15,22 @@ const { items, emptyItems } = Astro.props;
     </>
 )}
 
+<!-- Shouldn't render anything -->
 {emptyItems.length > 0 && (
     <>
         <ul>
             {emptyItems.map(item => (
+                <li>{item}</li>
+            ))}
+        </ul>
+    </>
+)}
+
+<!-- Shouldn't render anything -->
+{internal.length > 0 && (
+    <>
+        <ul>
+            {internal.map(item => (
                 <li>{item}</li>
             ))}
         </ul>

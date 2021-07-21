@@ -21,6 +21,7 @@ const emptyItems = [];
         <hr />
         <h2>From Homepage</h2>
 
+        <!-- Should render 3 items -->
         {items.length > 0 && (
             <>
                 <ul>
@@ -31,6 +32,7 @@ const emptyItems = [];
             </>
         )}
 
+        <!-- Shouldn't render anything -->
         {emptyItems.length > 0 && (
             <>
                 <ul>
